@@ -1,0 +1,18 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="offset-1 col-10 list-div">
+    <h1> Adicione um novo Usuário: </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" class="btn btn-success" value="Adicionar Usuário">
+    </form>
+                    
+</div>
+
+{% endblock %}

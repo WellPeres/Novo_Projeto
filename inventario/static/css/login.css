@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+  --font-primary: "Baloo Da 2", serif:
+  --font-secundary: "Josefin Slab", serif:
+  --font-action: "Muli", serif:
+}
+
+.img-wrapper img{
+    width: 40%;
+    height: 40%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: 40%;
+    background-color:white;
+    
+}
+.img-wrapper label.campo_nome
+{
+    position: absolute;
+    bottom: 50%;
+    left:65%;
+}
+
+.img-wrapper label.campo_senha
+{
+    position: absolute;
+    bottom: 45%;
+    left:65%;
+}
+
+.img-wrapper input.campo_nome
+{
+  background-color:white;
+  position:absolute;
+  left: auto;;
+  top:auto;
+  width: 10%;
+  bottom: 50%;
+  right:20%;
+}
+.img-wrapper input.campo_senha
+{
+  background-color:white;
+  position:absolute;
+  left:auto;
+  top: auto;
+  width: 10%;
+  bottom: 45%;
+  right:20%;
+}
+
+.img-wrapper button.btn_submit
+{
+  position:absolute;
+  width:15%;
+  bottom: 35%;
+  right:20%;
+  cursor: pointer;
+}

@@ -1,0 +1,11 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+<div class="offset-1 col-10 list-div">
+    <h1> {{ views.nome}} </h1>
+    <p>{{ views.contrato }} | {{ views.computador }} | {{ views.user_login }} | {{ views.email }} | {{ views.setor }} | {{ views.equipamento_em_uso }} | {{ views.monitor_em_uso }} {{ views.monitor_em_uso.polegadas}}<br></p><br>    
+                    
+</div>
+
+{% endblock %}

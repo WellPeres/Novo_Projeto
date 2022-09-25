@@ -1,0 +1,27 @@
+{%extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+
+  <header>
+      <div class="img-wrapper">
+        <img src="{% static 'img/SB-Tech.png' %}" alt="">
+
+          <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <label class="campo_nome">Login:</label><br>
+            <label class="campo_senha">Senha:</label><br>
+            <input type="text" id="email" class="campo_nome" name="email" placeholder="Entre com o email cadastrado"><br>
+            <input id="senha" type="password" class="campo_senha" name="senha" placeholder="Digite aqui sua senha"><br>
+            <button class="btn_submit" type="submit" >
+                <img src="{% static 'img/button.png' %}"  >
+            </button> 
+          </form>
+        </div>
+  </header>
+ 
+</div>
+
+
+
+{% endblock %}
