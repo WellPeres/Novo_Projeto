@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.models import User
 from django.contrib import auth, messages
 from .models import Maquinas
 from .forms import MaquinaForm
@@ -24,8 +23,8 @@ def newComputador(request):
            views = form.save(commit=False)
            views.status = 'Disponivel'
            views.save()
+           messages.info(request, 'Computador adicionado com sucesso.')
            return redirect('maquinas_list')
-
     else:
         form = MaquinaForm()
         return render(request, 'computadores/add-computador.html', {'form' : form })
@@ -38,6 +37,7 @@ def editComputador(request, id):
         form = MaquinaForm(request.POST, instance=views)
         if(form.is_valid()):
             views.save()
+            messages.info(request, 'Computador editado com sucesso.')
             return redirect('maquinas_list')
         else:
             return render(request, 'computadores/edit-computador.html', {'form': form, 'views': views})

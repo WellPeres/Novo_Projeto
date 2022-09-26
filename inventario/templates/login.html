@@ -7,6 +7,7 @@
       <div class="img-wrapper">
         <img src="{% static 'img/SB-Tech.png' %}" alt="">
 
+        
           <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <label class="campo_nome">Login:</label><br>

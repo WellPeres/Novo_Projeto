@@ -1,6 +1,6 @@
 {% extends 'base2.html' %}
 
-{% block title %}Lista de monitores{% endblock %}
+{% block title %}Inventário ! {% endblock %}
 
 {% block content %}
 <div class="offset-1 col-10 list-div">
@@ -31,32 +31,14 @@
     {% endif %}
     <ul class="task-list">
         {% for user in users %}
-        {% if task.done == 'doing' %}
             <li class="task-item">
-        {% else %}
-            <li class="task-item done">
-        {% endif %}
                 <span><a href="{{user.id}}">{{user.nome}}</a></span>
-                <a href="edit/{{user.id}}"><span><i class="fas fa-edit"></i></span></a>
-                <!-- <a href="delete/{{cpu.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a> --><!-- <a href="changestatus/{{task.id}}"><i class="fas fa-check"></i></a> -->
             </li>
         {% endfor %}
     </ul>
     <div class="pagination">
-        <span class="step-links">
-            {% if tasks.has_previous %}
-                <a href="?page={{ tasks.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
-            {% endif %}
+        <span class="step-links">             
             
-            {% if tasks.paginator.num_pages %}
-            <span class="current">
-                {{ tasks.number }} de {{ tasks.paginator.num_pages }}
-            </span>
-            {% endif %}
-        
-            {% if tasks.has_next %}
-                <a href="?page={{ tasks.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
-            {% endif %}
         </span>
     </div>
 </div>

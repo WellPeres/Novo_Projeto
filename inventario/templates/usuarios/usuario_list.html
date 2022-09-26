@@ -40,8 +40,9 @@
             <li class="task-item done">
         {% endif %}
                 <span><a href="{{user.id}}">{{user.nome}}</a></span>
+                <a href="delete/{{user.id}}"><span><i class="fas fa-trash"></i></span></a>
                 <a href="edit/{{user.id}}"><span><i class="fas fa-edit"></i></span></a>
-                <!-- <a href="delete/{{cpu.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a> --><!-- <a href="changestatus/{{task.id}}"><i class="fas fa-check"></i></a> -->
+                
             </li>
         {% endfor %}
     </ul>

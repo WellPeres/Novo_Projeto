@@ -26,6 +26,7 @@ def newUsuario(request):
         if form.is_valid():
            views = form.save(commit=False)
            views.save()
+           messages.info(request, 'Usuário adicionado com sucesso.')
            return redirect('usuario_list')
 
     else:
@@ -41,8 +42,18 @@ def editUsuario(request, id):
         form = UsuarioForm(request.POST, instance=views)
         if(form.is_valid()):
             views.save()
+            messages.info(request, 'Usuário editado com sucesso.')
             return redirect('usuario_list')
         else:
             return render(request, 'usuarios/edit-usuario.html', {'form': form, 'views': views})
     else:
         return render(request, 'usuarios/edit-usuario.html', {'form': form, 'views': views})
+
+
+def deleteUsuario(request, id):
+    views = get_object_or_404(Usuario, pk=id)
+    views.delete()
+
+    messages.info(request, 'Usuário deletado com sucesso.')
+
+    return redirect('index')
