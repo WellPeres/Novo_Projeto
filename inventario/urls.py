@@ -23,6 +23,7 @@ from .views import *
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', index, name='index'),
+    path('buscar',search, name='search'),
     path('usuarios/', include('usuarios.urls')),
     path('monitores/', include('monitores.urls')),
     path('computadores/', include('computadores.urls')),

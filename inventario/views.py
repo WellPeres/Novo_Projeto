@@ -27,3 +27,15 @@ def campo_vazio(campo):
     return not campo.strip()
 
 
+
+
+
+def search(request):
+    """ Lista as receitas em ordem de Criação por data """
+    lista_usuarios = Usuario.objects.order_by().filter()
+
+    if 'search' in request.GET:
+        nome_a_buscar = request.GET['search']
+        lista_usuarios = lista_usuarios.filter(nome_usuario__icontains=nome_a_buscar)
+
+    return render(request, 'buscar.html', {'users': lista_usuarios})

@@ -5,22 +5,47 @@
 {% block content %}
 <div class="offset-1 col-10 list-div">
     <h1> Inventário </h1>
-    <div class="container dashboard">
-   
-    <div class="col-9 search-div">
+
+    
+    <div class="container dashboard">   
+        
+        <div class="col-9 search-div">
         <form method="GET" id="search-form">
             <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar..." value="{{ request.GET.search }}">
             <i class="fas fa-search" id="search-btn"></i>
         </form>
     </div>
+        
+        <div class="col-4 dashboard-box" id="dashboard-lastdays">
+            <h4>Usuários</h4>
+            
+            {% for user in users %}
+                <span><a href="{{user.id}}">{{user.nome}} | </a></span>
+            {% endfor %}
+
+        </div>
+        <div class="col-4 dashboard-box" id="dashboard-done">
+            <h4>Computadores</h4>
+            {% for user in users %}
+                <span><a href="{{user.id}}">{{user.equipamento_em_uso}} | </a></span>
+            {% endfor %}
+            
+        </div>
+        <div class="col-4 dashboard-box" id="dashboard-doing">
+                <h4>Monitores</h4>
+                {% for user in users %}
+                <span><a href="{{user.id}}">{{user.monitor_em_uso}} | </a></span>
+            {% endfor %}
+    </div>
+        
+    <div class="col-9 search-div">
+        <form method="GET" id="search-form">
+          
+            <i class="fas fa-search" id="search-btn"></i>
+        </form>
+    </div>
     <div class="col-12 filter-div">
-        <span>Filtrar por:</span>
-        <select name="filter" id="filter" class="form-control">
-            <option value="">Escolha uma opção...</option>
-            <option value="done">Computador</option>
-            <option value="doing">Monitor</option>
-            <option value="doing">Usuário</option>
-        </select>
+        
     </div>
     {% if messages %}
     <ul class="messages">
@@ -29,21 +54,7 @@
         {% endfor %}
     </ul>
     {% endif %}
-        {{user.nome}}
-       
-        {% for user in users %}
-        {% if task.done == 'doing' %}
-            <li class="task-item">
-        {% else %}
-            <li class="task-item done">
-        {% endif %}
-            <span><a href="{{user.id}}">{{user.nome}} | </a></span>
-            <span><a href="{{user.id}}">{{user.equipamento_em_uso}}</a></span>
-            <!-- <span><a href="{{user.id}}">{{user.monitor_em_uso}}</a></span>
-            <span><a href="{{user.id}}">{{user.monitor_em_uso.modelo2}}</a></span>        -->
-            </li>
-        {% endfor %}
-   
+
     <div class="pagination">
         <span class="step-links">             
             
@@ -51,3 +62,5 @@
     </div>
 </div>
 {% endblock %}
+
+

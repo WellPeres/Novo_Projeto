@@ -9,7 +9,7 @@ from .models import Usuario
 
 # Create your views here.
 
-@login_required
+
 def usuarioList(request):
     """ Tras as receitas registradas e os links para acessos e cadastros """
     users = Usuario.objects.all()
