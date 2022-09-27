@@ -3,7 +3,9 @@
 {% block title %}Lista de monitores{% endblock %}
 
 {% block content %}
+
 <div class="offset-1 col-10 list-div">
+    <p>Olá, {{ request.user.username }} , Seja Bem vindo(a)!</p>
     <h1>Lista de Usuários</h1>
     <div class="container dashboard">
     <a id="add-link" href="{% url 'new_usuario' %}">

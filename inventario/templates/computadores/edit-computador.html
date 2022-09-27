@@ -4,6 +4,7 @@
 {% block content %}
 
 <div class="offset-1 col-10 list-div">
+    <p>Olá, {{ request.user.username }} , Seja Bem vindo(a)!</p>
     <h1> Editando '{{ views.nome_pc }}' </h1>
     <form method="POST">
         {% csrf_token %}

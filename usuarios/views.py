@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
 
@@ -8,17 +9,20 @@ from .models import Usuario
 
 # Create your views here.
 
+@login_required
 def usuarioList(request):
     """ Tras as receitas registradas e os links para acessos e cadastros """
     users = Usuario.objects.all()
     print(users)
     return render(request,'usuarios/usuario_list.html', {'users': users})
 
+@login_required
 def usuarioView(request, id):
     views = get_object_or_404(Usuario, pk=id)
     print(views)
     return render(request, 'usuarios/usuario_view.html', {'views': views})
 
+@login_required
 def newUsuario(request):
     if request.method == 'POST':
         form = UsuarioForm(request.POST)
@@ -33,7 +37,7 @@ def newUsuario(request):
         form = UsuarioForm()
         return render(request, 'usuarios/add-usuario.html', {'form' : form })
 
-
+@login_required
 def editUsuario(request, id):
     views = get_object_or_404(Usuario, pk=id)
     form = UsuarioForm(instance=views)
@@ -49,11 +53,11 @@ def editUsuario(request, id):
     else:
         return render(request, 'usuarios/edit-usuario.html', {'form': form, 'views': views})
 
-
+@login_required
 def deleteUsuario(request, id):
     views = get_object_or_404(Usuario, pk=id)
     views.delete()
 
     messages.info(request, 'Usuário deletado com sucesso.')
 
-    return redirect('index')
+    return redirect('')

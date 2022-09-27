@@ -29,13 +29,21 @@
         {% endfor %}
     </ul>
     {% endif %}
-    <ul class="task-list">
+        {{user.nome}}
+       
         {% for user in users %}
+        {% if task.done == 'doing' %}
             <li class="task-item">
-                <span><a href="{{user.id}}">{{user.nome}}</a></span>
+        {% else %}
+            <li class="task-item done">
+        {% endif %}
+            <span><a href="{{user.id}}">{{user.nome}} | </a></span>
+            <span><a href="{{user.id}}">{{user.equipamento_em_uso}}</a></span>
+            <!-- <span><a href="{{user.id}}">{{user.monitor_em_uso}}</a></span>
+            <span><a href="{{user.id}}">{{user.monitor_em_uso.modelo2}}</a></span>        -->
             </li>
         {% endfor %}
-    </ul>
+   
     <div class="pagination">
         <span class="step-links">             
             

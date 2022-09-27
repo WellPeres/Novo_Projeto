@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="offset-1 col-10 list-div">
+    <p>Olá, {{ request.user.username }} , Seja Bem vindo(a)!</p>
     <h1> {{ views.nome_pc}} </h1>
     <p>{{ views.tipo }} | {{ views.modelo }} | {{ views.processador }} | {{ views.ano_compra }} | {{ views.service_tag }} | {{ views.memoria_ram }} | {{ views.armazenamento }} | {{ views.status }}   ||   </p><br>    
                     

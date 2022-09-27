@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-
+<p>Olá, {{ request.user.username }} , Seja Bem vindo(a)!</p>
 <div class="offset-1 col-10 list-div">
     <h1> Adicione um novo computador: </h1>
     <form method="POST">

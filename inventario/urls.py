@@ -21,10 +21,10 @@ from django.urls import path, include
 from .views import *
 
 urlpatterns = [
-    path('', login, name='login'),
-    path('index', index, name='index'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', index, name='index'),
     path('usuarios/', include('usuarios.urls')),
     path('monitores/', include('monitores.urls')),
     path('computadores/', include('computadores.urls')),
-    path('admin/', admin.site.urls),
+    path('estoque-ti/', admin.site.urls),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

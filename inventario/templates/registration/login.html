@@ -12,17 +12,17 @@
             {% csrf_token %}
             <label class="campo_nome">Login:</label><br>
             <label class="campo_senha">Senha:</label><br>
-            <input type="text" id="email" class="campo_nome" name="email" placeholder="Entre com o email cadastrado"><br>
-            <input id="senha" type="password" class="campo_senha" name="senha" placeholder="Digite aqui sua senha"><br>
+            <input type="text" id="email" class="campo_nome" name="username" placeholder="Entre com o email cadastrado" required autofocus><br>
+            <input id="senha" type="password" class="campo_senha" name="password" placeholder="Digite aqui sua senha" required><br>
             <button class="btn_submit" type="submit" >
                 <img src="{% static 'img/button.png' %}"  >
             </button> 
+            {% for k, v in form.errors.items %}
+                {{ v }}
+            {% endfor %}      
           </form>
         </div>
   </header>
  
 </div>
-
-
-
 {% endblock %}
