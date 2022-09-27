@@ -38,7 +38,7 @@
 }
 
 .dashboard span {
-    font-size: 20px;
+    font-size: 16px;
     display: block;
     width: 100%;
 }
@@ -49,18 +49,18 @@
     color: #FFF;
     padding: 20px;
     box-sizing: border-box;
-    height: 130px;
+    height: 100%;
     width: 32%;
     text-align: center;
 }
 
 .dashboard-box:nth-child(2) {
-    margin-left: 1.5%;
-    margin-right: 1.5%;
+    margin-left: 2%;
+    margin-right: 0%;
 }
 
 #dashboard-lastdays {
-    background-color: #3476e2;
+    background-color: purple;
 }
 
 #dashboard-done {

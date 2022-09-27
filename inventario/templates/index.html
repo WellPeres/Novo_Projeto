@@ -34,14 +34,12 @@
         <div class="col-4 dashboard-box" id="dashboard-doing">
                 <h4>Monitores</h4>
                 {% for user in users %}
-                <span><a href="{{user.id}}">{{user.monitor_em_uso}} | </a></span>
+                <span><a href="{{user.id}}">{{user.monitor_em_uso }} | {{user.monitor_em_uso.modelo2 }} </a></span>
             {% endfor %}
     </div>
         
     <div class="col-9 search-div">
-        <form method="GET" id="search-form">
-          
-            <i class="fas fa-search" id="search-btn"></i>
+        <form method="GET" id="search-form">     
         </form>
     </div>
     <div class="col-12 filter-div">
