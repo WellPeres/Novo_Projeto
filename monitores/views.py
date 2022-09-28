@@ -9,6 +9,10 @@ from .forms import MonitorForm
 def monitorList(request):
     """ Tras as receitas registradas e os links para acessos e cadastros """
     telas = Monitor.objects.all()
+    search = request.GET.get('search')
+    if search:
+        telas = telas.filter(modelo__icontains=search)
+        telas = telas.filter(modelo2__icontains=search)
     print(telas)
     return render(request,'monitores/monitores_list.html', {'telas': telas})
 

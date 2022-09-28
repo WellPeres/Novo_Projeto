@@ -13,6 +13,9 @@ from usuarios.views import Usuario
 def index(request):
     """ Tras as receitas registradas e os links para acessos e cadastros """
     users = Usuario.objects.all()
+    search = request.GET.get('search')
+    if search:
+        users = users.filter(nome__icontains=search)
     print(users)
     return render(request, 'index.html', {'users': users})
 
@@ -26,16 +29,3 @@ def campo_vazio(campo):
     """ Verifica se os Campos de login ou senha estão preenchidos na hora do cadastro """
     return not campo.strip()
 
-
-
-
-
-def search(request):
-    """ Lista as receitas em ordem de Criação por data """
-    lista_usuarios = Usuario.objects.order_by().filter()
-
-    if 'search' in request.GET:
-        nome_a_buscar = request.GET['search']
-        lista_usuarios = lista_usuarios.filter(nome_usuario__icontains=nome_a_buscar)
-
-    return render(request, 'buscar.html', {'users': lista_usuarios})

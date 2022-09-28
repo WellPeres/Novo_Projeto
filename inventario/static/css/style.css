@@ -13,6 +13,7 @@
     margin-bottom: 20px;
 }
 
+
 .navbar-nav {
     margin: auto;
 }
@@ -28,12 +29,14 @@
 
 /* dashboard */
 .dashboard {
+    
     padding: 0;
     width: 100%;
     display: block;
 }
 
 .dashboard h4 {
+    /* arrumar link */
     font-size: 20px;
 }
 
@@ -41,6 +44,7 @@
     font-size: 16px;
     display: block;
     width: 100%;
+    margin-left: 0;
 }
 
 .dashboard-box {
@@ -55,20 +59,20 @@
 }
 
 .dashboard-box:nth-child(2) {
-    margin-left: 2%;
-    margin-right: 0%;
+    margin-left: 0%;
+    margin-right: 0,5%;
 }
 
 #dashboard-lastdays {
-    background-color: purple;
+    background-color: #87CEFA;
 }
 
 #dashboard-done {
-    background-color: #13c43f;
+    background-color: #98FB98;
 }
 
 #dashboard-doing {
-    background-color: #db1e47;
+    background-color: #FFDAB9;
 }
 
 /* Botão de adicionar */
@@ -105,6 +109,8 @@
 
 .search-div {
     padding: 0;
+    margin-right: 0%;
+    margin-left: 0;
     margin-top: 15px;
     margin-bottom: 15px;
     display: inline-block;
@@ -170,9 +176,11 @@
 
 /* Rodapé */
 footer {
-    background-color: #333;
-    height: 250px;
-    border-top: 2px solid #202020;
+    margin-left: 1%;
+    margin-bottom: auto;
+    background-color: #4F4F4F	;
+    height: 100px;
+    border-top: 5px solid #D8BFD8	;
 }
 
 footer p {

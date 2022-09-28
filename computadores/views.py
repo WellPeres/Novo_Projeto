@@ -10,6 +10,9 @@ from .forms import MaquinaForm
 def maquinasList(request):
     """ Tras as receitas registradas e os links para acessos e cadastros """
     cpus = Maquinas.objects.all()
+    search = request.GET.get('search')
+    if search:
+        cpus = cpus.filter(nome_pc__icontains=search)
     return render(request,'computadores/computadores_list.html', {'cpus': cpus})
 
 @login_required

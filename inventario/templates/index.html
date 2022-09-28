@@ -4,11 +4,11 @@
 
 {% block content %}
 <div class="offset-1 col-10 list-div">
-    <h1> Inventário </h1>
+    
 
     
     <div class="container dashboard">   
-        
+        <h1 class="description">  Inventário </h1>
         <div class="col-9 search-div">
         <form method="GET" id="search-form">
             <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar..." value="{{ request.GET.search }}">
@@ -16,25 +16,26 @@
         </form>
     </div>
         
-        <div class="col-4 dashboard-box" id="dashboard-lastdays">
-            <h4>Usuários</h4>
+    
+    <div class="col-4 dashboard-box" id="dashboard-lastdays">
+        <h4>Usuários</h4>
             
-            {% for user in users %}
-                <span><a href="{{user.id}}">{{user.nome}} | </a></span>
-            {% endfor %}
-
-        </div>
+        {% for user in users %}
+                <span><a href="{{user.id}}">{{user.nome}} </a></span>
+        {% endfor %}
+    
+    </div>
         <div class="col-4 dashboard-box" id="dashboard-done">
             <h4>Computadores</h4>
             {% for user in users %}
-                <span><a href="{{user.id}}">{{user.equipamento_em_uso}} | </a></span>
+                <span><a href="{{user.id}}">{{user.equipamento_em_uso}} </a></span>
             {% endfor %}
             
         </div>
         <div class="col-4 dashboard-box" id="dashboard-doing">
                 <h4>Monitores</h4>
                 {% for user in users %}
-                <span><a href="{{user.id}}">{{user.monitor_em_uso }} | {{user.monitor_em_uso.modelo2 }} </a></span>
+                <span><a href="usuarios/{{user.id}}">{{user.monitor_em_uso }} | {{user.monitor_em_uso.modelo2 }} </a></span>
             {% endfor %}
     </div>
         

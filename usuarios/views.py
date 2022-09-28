@@ -13,6 +13,9 @@ from .models import Usuario
 def usuarioList(request):
     """ Tras as receitas registradas e os links para acessos e cadastros """
     users = Usuario.objects.all()
+    search = request.GET.get('search')
+    if search:
+        users = users.filter(nome__icontains=search)
     print(users)
     return render(request,'usuarios/usuario_list.html', {'users': users})
 
